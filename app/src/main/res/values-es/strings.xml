@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">Lab4adapterAndActivity</string>
+    <string-array
+        name="colors_array">
+        <item>blanco</item>
+        <item>Cian</item>
+        <item>Azul</item>
+        <item>Gris</item>
+        <item>Púrpura</item>
+    </string-array>
+</resources>

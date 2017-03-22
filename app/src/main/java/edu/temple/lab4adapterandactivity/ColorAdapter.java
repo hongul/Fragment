@@ -16,6 +16,9 @@ public class ColorAdapter extends BaseAdapter {
     Context myContext;
     String[] myColors;
 
+    static final String[] actualColors = {"White", "Cyan", "Blue", "Grey", "Purple"};
+    private PaletteFragment activity;
+
     public ColorAdapter(Context context, String[] colors) {
         this.myContext = context;
         this.myColors = colors;
@@ -40,7 +43,8 @@ public class ColorAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         TextView textView = new TextView(myContext);
         textView.setText(myColors[i]);
-        textView.setBackgroundColor(Color.parseColor(myColors[i].toString()));
+        textView.setBackgroundColor(Color.parseColor(actualColors[i].toString()));
         return textView;
     }
+
 }

@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Lab4adapterAndActivity</string>
+    <string-array name="colors_array">
+        <item>White</item>
+        <item>Cyan</item>
+        <item>Blue</item>
+        <item>Grey</item>
+        <item>Purple</item>
+    </string-array>
 </resources>
