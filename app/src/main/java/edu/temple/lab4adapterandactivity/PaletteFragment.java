@@ -22,30 +22,35 @@ public class PaletteFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+                             final Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View layout = inflater.inflate(R.layout.activity_palette, container, false);
 
+        // grid for colors
         GridView myGridview = (GridView) layout.findViewById(R.id.gridview);
-
+        // string to be use for parsing when current language is not english
         final String[] actualColors = {"White", "Cyan", "Blue", "Grey", "Purple"};
-
+        // use resource string when language is not english
         Resources res = getResources();
         String[] myColors = res.getStringArray(R.array.colors_array);
 
+        // get context
         Context myContext;
         myContext = getActivity();
-
+        // give content to adapter
         myAdapter = new ColorAdapter(myContext, myColors);
-
         myGridview.setAdapter(myAdapter);
 
+        // on click listener for color selection
         myGridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String message = actualColors[i];
 
-                parent.sendMessage(message);
+
+                    parent.sendMessage(message);
+
+
             }
         });
 
@@ -62,10 +67,11 @@ public class PaletteFragment extends Fragment {
             throw new RuntimeException("Not Implemented");
         }
 
-
     }
 
     public interface PaletteInterface {
         void sendMessage(String message);
     }
+
+
 }

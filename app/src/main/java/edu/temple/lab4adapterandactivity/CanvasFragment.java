@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 public class CanvasFragment extends Fragment {
 
     View myView;
+    private String color;
 
     public CanvasFragment() {
         // Required empty public constructor
@@ -23,6 +24,13 @@ public class CanvasFragment extends Fragment {
         View layout = inflater.inflate(R.layout.activity_canvas, container, false);
 
         myView = layout.findViewById(R.id.activity_canvas);
+
+        Bundle args = getArguments();
+        if( args != null) {
+            color = args.getString("color");
+            myView.setBackgroundColor(Color.parseColor(color));
+        }
+
 
         return layout;
     }
